@@ -10,6 +10,7 @@
 - name: Install casks
   homebrew_cask:
     name: "{{ item }}"
+    accept_external_apps: true
   with_items:
     - visual-studio-code
     - virtualbox
