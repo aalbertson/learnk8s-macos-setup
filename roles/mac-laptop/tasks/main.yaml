@@ -2,7 +2,7 @@
   homebrew:
     update_homebrew: yes
     name: "{{ item }}"
-    state: latest
+    state: present
   loop:
     - docker
     - minikube

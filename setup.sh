@@ -11,7 +11,7 @@ if [ "$(id -u)" -eq 0 ]; then
     exit 1
 fi
 
-if [ -f xcode-select -p 1>/dev/null;echo $? ]; then
+if  xcode-select -p 1> /dev/null ; echo $? ; then
   echo "XCode Command Line Tools are installed. Continuing..."
 else
   echo "Installing the Command Line Tools (expect a GUI popup)"
