@@ -1,0 +1,34 @@
+- name: Install useful tools
+  homebrew:
+    update_homebrew: yes
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - docker
+    - minikube
+  
+- name: Install casks
+  homebrew_cask:
+    name: "{{ item }}"
+  with_items:
+    - visual-studio-code
+    - virtualbox
+    - iterm2
+    - vagrant
+
+
+# - name: Make Vagrant directory
+#   file:
+#     path: "{{ homedir }}/vagrant-boxen"
+#     state: directory
+
+# - name: Make ubuntu64 Directory
+#   file:
+#     path: "{{ homedir }}/vagrant-boxen/ubuntu64"
+#     state: directory
+
+# - name: Install ubuntu64
+#   shell: vagrant init ubuntu/trusty64
+#   args:
+#     chdir: "{{ homedir }}/vagrant-boxen/ubuntu64"
+#     creates: "{{ homedir }}/vagrant-boxen/ubuntu64/Vagrantfile"
