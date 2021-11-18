@@ -6,6 +6,7 @@
   loop:
     - docker
     - minikube
+    - dive
   
 - name: Install casks
   homebrew_cask:
